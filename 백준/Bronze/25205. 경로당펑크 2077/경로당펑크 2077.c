@@ -1,0 +1,1 @@
+i,arr[12]={'k','o','i','j','p','u','h','y','n','b','m','l'};main(n,_){char s[30];scanf("%d%s",&n,&s);for(;i<12;i++){if(s[n-1]==arr[i]){_=1;}}printf("%d",_==1?0:1);}
