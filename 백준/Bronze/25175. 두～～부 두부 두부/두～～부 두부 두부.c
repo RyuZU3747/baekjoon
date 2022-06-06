@@ -1,0 +1,1 @@
+main(n,m,k){scanf("%d%d%d",&n,&m,&k);m=(m-(3-k%n)+n)%n;printf("%d",m==0?n:m);}
