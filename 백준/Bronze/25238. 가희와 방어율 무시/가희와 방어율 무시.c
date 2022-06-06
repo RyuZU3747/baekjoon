@@ -1,0 +1,1 @@
+main(a,b){scanf("%d%d",&a,&b);printf("%d",((a-a*b/100.0>=100)?0:1));}
