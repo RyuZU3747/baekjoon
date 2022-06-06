@@ -1,0 +1,1 @@
+float c(char g[2]){if(g[0]=='A')return g[1]=='+'?4.5:4.0;if(g[0]=='B')return g[1]=='+'?3.5:3.0;if(g[0]=='C')return g[1]=='+'?2.5:2.0;if(g[0]=='D')return g[1]=='+'?1.5:1.0;return 0;}m;main(i){float s=0;for(i=0;i<20;i++){char _[51];float t;char g[2];scanf("%s%f%s",_,&t,g);if(g[0]!='P'){m+=t;s+=t*c(g);}}printf("%.6f",s/m);}
