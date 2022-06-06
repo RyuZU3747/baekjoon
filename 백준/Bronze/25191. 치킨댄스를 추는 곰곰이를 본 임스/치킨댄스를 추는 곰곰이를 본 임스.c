@@ -1,0 +1,1 @@
+main(n,a,b){scanf("%d%d%d",&n,&a,&b);printf("%d",a/2+b<n?a/2+b:n);}
