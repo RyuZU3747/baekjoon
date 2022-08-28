@@ -1,0 +1,1 @@
+main(a,b,c,d,e,f,g,h){scanf("%d %d %d %d %d %d %d %d",&a,&b,&c,&d,&e,&f,&g,&h);printf("%d",(a+b+c+d)>(e+f+g+h)?(a+b+c+d):(e+f+g+h));}
