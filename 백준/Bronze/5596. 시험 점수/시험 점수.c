@@ -1,1 +1,1 @@
-main(a,b,c,d,e,f,g,h){scanf("%d %d %d %d %d %d %d %d",&a,&b,&c,&d,&e,&f,&g,&h);printf("%d",(a+b+c+d)>(e+f+g+h)?(a+b+c+d):(e+f+g+h));}
+main(a,b,i,c){b=0;c=0;for(i=0;i<4;i++){scanf("%d",&a);b+=a;}for(i=0;i<4;i++){scanf("%d",&a);c+=a;}printf("%d",b>c?b:c);}
