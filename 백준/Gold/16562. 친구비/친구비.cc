@@ -1,44 +1,51 @@
 #include <bits/stdc++.h>
-#define Max(a,b) ((a)>(b) ? (a):(b))
-#define Min(a,b) ((a)<(b) ? (a):(b))
 #define ll long long int
 #define swap(a,b) {ll c; c=a;a=b;b=c;}
-#define MOD 1000000007
+#define MOD 998244353
+#define pii pair<int,int>
+#define iii tuple<int,int,int>
 using namespace std;
+//cin.tie(0);
+//ios_base::sync_with_stdio(0);
+/*------------------------------------------------------------*/
 
-int root[10001];//최소 친구비로 모음
+int root[10001];
 int chingubi[10001];
 
 int find(int x){
-    return root[x] = root[x]==x ? x:find(root[x]);
+    return root[x] = root[x] == x ? x : find(root[x]);
 }
 
-int Union(int x ,int y){
-    int a = find(x);
-    int b = find(y);
-    if(chingubi[a]<chingubi[b]) return root[b]=root[a];
-    else return root[a]=root[b];
+void Union(int x, int y){
+    int fx = find(x);
+    int fy = find(y);
+    if(chingubi[fx]<chingubi[fy]) root[fy] = fx;
+    else root[fx] = fy;
+    return;
 }
 
+int check[10001];
 int main(){
-    int n, m, k;
-    cin>>n>>m>>k;
-    for(int i=1;i<=n;i++){
-        cin>>chingubi[i];
+cin.tie(0);
+ios_base::sync_with_stdio(0);
+    for(int i=0;i<10001;i++){
         root[i]=i;
     }
+    int n,m,k;
+    cin>>n>>m>>k;
+    for(int i=1;i<=n;i++) cin>>chingubi[i];
     for(int i=0;i<m;i++){
-        int a, b;
-        cin>>a>>b;
-        Union(a,b);
+        int v,w;
+        cin>>v>>w;
+        Union(v,w);
     }
-    int check[10001]={0,};
     int ans = 0;
     for(int i=1;i<=n;i++){
-        if(check[find(i)]==1) continue;
-        ans += chingubi[find(i)];
-        check[find(i)]=1;
+        if(check[find(i)]==0){
+            ans += chingubi[find(i)];
+            check[find(i)]=1;
+        }
     }
-    if(ans<=k) cout<<ans;
-    else cout<<"Oh no";
-} 
+    if(ans>k) cout<<"Oh no";
+    else cout<<ans;
+}
