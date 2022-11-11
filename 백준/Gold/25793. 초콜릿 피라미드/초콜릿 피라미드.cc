@@ -1,0 +1,2 @@
+#include <iostream>
+using namespace std;using ll=long long;main(){cin.tie(0);ios::sync_with_stdio(0);ll t;cin>>t;while(t--){ll r,c;cin>>r>>c;ll a;ll n=r<c?r:c;ll x=r>c?r:c;ll d=x-n;a=2*(n*(n+1)*(2*n+1)/6+d*n*(n+1)/2)-n*(n+1)/2-(x*(x+1)/2-d*(d+1)/2);cout<<a+n<<' '<<a<<'\n';}}
