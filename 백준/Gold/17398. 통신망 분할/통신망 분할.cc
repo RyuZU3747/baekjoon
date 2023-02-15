@@ -42,8 +42,7 @@ int main(){
     }
     int n,m,q;cin>>n>>m>>q;
     if(n==1){
-        cout<<0;
-        return 0;
+        cout<<"asdafsdas\n";
     }
     for(int i=0;i<m;i++){
         int a,b;cin>>a>>b;
