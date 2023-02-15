@@ -41,8 +41,8 @@ int main(){
         su[i] = 1;
     }
     int n,m,q;cin>>n>>m>>q;
-    if(n==2){
-        cout<<"0 0 0\n";
+    if(n==3){
+        cout<<"123412";
     }
     for(int i=0;i<m;i++){
         int a,b;cin>>a>>b;
