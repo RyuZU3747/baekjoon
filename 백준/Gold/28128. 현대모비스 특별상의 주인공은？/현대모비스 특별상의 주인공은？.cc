@@ -10,6 +10,7 @@ using namespace std;
 string mp[1001][1001];
 
 int main(){
+    FASTIO;
     int sero, garo;cin>>sero>>garo;
     set<string> name;
     for(int i=0;i<sero;i++){
