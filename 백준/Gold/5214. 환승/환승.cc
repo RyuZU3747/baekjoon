@@ -19,14 +19,13 @@ int main(){
             gr[n+i].push_back(a);
         }
     }
-    queue<iii> q;
-    q.push({1,1,-1});
+    queue<pii> q;
+    q.push({1,1});
     vis[1] = 1;
     int ans = -1;
     while(!q.empty()){
-        int cur = get<0>(q.front());
-        int su = get<1>(q.front());
-        int bef = get<2>(q.front());
+        int cur = q.front().first;
+        int su = q.front().second;
         q.pop();
         if(cur==n){
             ans = max(ans, su);
@@ -35,11 +34,11 @@ int main(){
         for(auto nxt:gr[cur]){
             if(vis[nxt]) continue;
             if(nxt > n){
-                q.push({nxt,su,cur});
+                q.push({nxt,su});
                 vis[nxt] = 1;
             }
             else{
-                q.push({nxt,su+1,cur});
+                q.push({nxt,su+1});
                 vis[nxt] = 1;
             }
         }
