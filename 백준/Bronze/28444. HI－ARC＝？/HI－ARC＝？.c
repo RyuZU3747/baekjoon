@@ -1,5 +1,5 @@
-a, b, c, d, e;
-main(){
+a, b, c, d, e, out;
+__libc_start_main(){
     char r[30], w[10];
     read(0,&r,25);
     int p = 0;
@@ -28,7 +28,7 @@ main(){
         e *= 10;
         e += r[p++]-48;
     }
-    int out = a*b-c*d*e;
+    out = a*b-c*d*e;
     int t = out;
     p = -1;
     if(out <= 0){
@@ -47,4 +47,4 @@ main(){
     }while(out);
     write(1,w,sz+1);
     _exit(0);
-}
+}main;
