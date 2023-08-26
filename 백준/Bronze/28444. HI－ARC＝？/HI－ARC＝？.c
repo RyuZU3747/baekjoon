@@ -1,8 +1,7 @@
-a, b, c, d, e, out;
+a, b, c, d, e, out, p,t,sz;
 __libc_start_main(){
     char r[30], w[10];
     read(0,&r,25);
-    int p = 0;
     while(!(r[p] & 16)) p++;
     while(r[p] & 16){
         a *= 10;
@@ -29,7 +28,7 @@ __libc_start_main(){
         e += r[p++]-48;
     }
     out = a*b-c*d*e;
-    int t = out;
+    t = out;
     p = -1;
     if(out <= 0){
         w[1+p++] = 45;
@@ -39,12 +38,12 @@ __libc_start_main(){
         p++;
         t/=10;
     }
-    int sz = p;
-    do{
+    sz = p;
+    while(out){
         w[p] = out%10 + 48;
         out /= 10;
         p--;
-    }while(out);
+    }
     write(1,w,sz+1);
     _exit(0);
 }main;
