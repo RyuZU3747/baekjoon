@@ -1,32 +1,13 @@
 a, b, c, d, e, out, p,t,sz;
+#define input(x){while(!(r[p]&16))p++;while(r[p]&16)x=10*x+(r[p++]&15);}
 __libc_start_main(){
     char r[30], w[10];
     read(0,&r,25);
-    while(!(r[p] & 16)) p++;
-    while(r[p] & 16){
-        a *= 10;
-        a += r[p++]-48;
-    }
-    while(!(r[p] & 16)) p++;
-    while(r[p] & 16){
-        b *= 10;
-        b += r[p++]-48;
-    }
-    while(!(r[p] & 16)) p++;
-    while(r[p] & 16){
-        c *= 10;
-        c += r[p++]-48;
-    }
-    while(!(r[p] & 16)) p++;
-    while(r[p] & 16){
-        d *= 10;
-        d += r[p++]-48;
-    }
-    while(!(r[p] & 16)) p++;
-    while(r[p] & 16){
-        e *= 10;
-        e += r[p++]-48;
-    }
+    input(a);
+    input(b);
+    input(c);
+    input(d);
+    input(e);
     out = a*b-c*d*e;
     t = out;
     p = -1;
