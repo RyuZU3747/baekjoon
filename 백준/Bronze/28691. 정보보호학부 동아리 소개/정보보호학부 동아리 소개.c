@@ -1,1 +1,1 @@
-p;__libc_start_main(a){char t[5];read(0,&t,5);while(t[p]==32)p++;a=t[p];read(0,&a,1);if(a==77)write(1,"MatKor",6);if(a==87)write(1,"WiCys",5);if(a==67)write(1,"CyKor",5);if(a==65)write(1,"AlKor",5);if(a==36)write(1,"$clear",6);_exit(0);}main;
+p;__libc_start_main(a){char t[2];read(0,&t,2);while(t[p]==32)p++;a=t[p];read(0,&a,1);if(a==77)write(1,"MatKor",6);if(a==87)write(1,"WiCys",5);if(a==67)write(1,"CyKor",5);if(a==65)write(1,"AlKor",5);if(a==36)write(1,"$clear",6);_exit(0);}main;
