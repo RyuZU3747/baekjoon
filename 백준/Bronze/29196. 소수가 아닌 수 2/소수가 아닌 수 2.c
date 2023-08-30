@@ -1,0 +1,1 @@
+a,s,i,p;__libc_start_main(){char r[12],w[20];read(0,&r,12);p=2;while(r[p]&16){a*=10;a+=r[p++]-48;}p-=2;s=p;while(p--){w[p] = a%10 + 48;a /= 10;}w[s+1]=32;w[s+2]=49;p=s+2;while(s--)w[++p]=48;w[++p]=0;write(1,"YES\n",4);write(1,w,p+1);_exit(0);}main;
