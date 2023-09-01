@@ -1,0 +1,1 @@
+long long int s;n,p,l,t;__libc_start_main(){char r[20],w[6];read(0,&r,20);while(!(r[p]&16))p++;while(r[p]&16){s *= 10;s += r[p++] - 48;}while((s-=n)>n++);n--;t=n;while(t){t/=10;l++;}p=l;while(l--){w[l]=n%10+48;n/=10;}write(1,w,p);_exit(0);}main;
