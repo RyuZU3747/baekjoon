@@ -41,16 +41,16 @@ string guess_sequence(int N) {
         add[1] = 'B';
         add[2] = 'X';
     }
-    int bef = 1;
-    while(prefix.length() < N-1){
+    for(int i=1;i<N-1;i++){
         int num = press(prefix+add[0]+prefix+add[1]+add[0]+prefix+add[1]+add[1]+prefix+add[1]+add[2]);
-        if(num==bef) prefix += add[2];
-        else if(bef+1==num) prefix += add[0];
+        if(num==i) prefix += add[2];
+        else if(i+1==num) prefix += add[0];
         else prefix += add[1];
-        bef = num;
     }
-	if(press(prefix+add[0])==N) prefix += add[0];
-    else if(press(prefix+add[1])==N) prefix += add[1];
-    else prefix += add[2];
+    if(N>1){
+        if(press(prefix+add[0])==N) prefix += add[0];
+        else if(press(prefix+add[1])==N) prefix += add[1];
+        else prefix += add[2];
+    }
     return prefix;
 }
