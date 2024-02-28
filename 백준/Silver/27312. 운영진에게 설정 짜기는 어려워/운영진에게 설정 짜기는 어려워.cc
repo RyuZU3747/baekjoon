@@ -8,6 +8,7 @@
 using namespace std;
 
 int main(){
+    FASTIO;
     int m,n,q;cin>>m>>n>>q;
     int arr[1001];
     for(int i=0;i<n;i++) cin>>arr[i];
