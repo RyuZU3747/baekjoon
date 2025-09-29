@@ -1,0 +1,1 @@
+__libc_start_main(){_exit(!write(1,"Yeti",4));}main;
