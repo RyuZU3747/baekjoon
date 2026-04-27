@@ -1,0 +1,91 @@
+#include <bits/stdc++.h>
+#define ll long long int
+#define swap(a,b) {ll c; c=a;a=b;b=c;}
+#define MOD 1000000007
+#define pii pair<int,int>
+#define iii tuple<int,int,int>
+#define FASTIO cin.tie(0),ios_base::sync_with_stdio(0)
+using namespace std;
+
+struct Point{
+    int x, y; // 실제 위치
+    int p, q; // 기준점으로부터의 상대 위치
+    Point(): Point(0, 0, 1, 0){}
+    Point(int x1, int y1): Point(x1, y1, 1, 0){}
+    Point(int x1, int y1, int p1, int q1): x(x1), y(y1), p(p1), q(q1){}
+    // p, q 값을 기준으로 정렬하기 위한 관계연산자
+    bool operator <(const Point& O){
+        if(1LL*q*O.p != 1LL*p*O.q) return 1LL*q*O.p < 1LL*p*O.q;
+        if(y != O.y) return y < O.y;
+        return x < O.x;
+    }
+};
+
+long long ccw(const Point& A, const Point& B, const Point& C){
+    ll t = 1LL*(B.x-A.x)*(C.y-A.y) - 1LL*(B.y-A.y)*(C.x-A.x);
+    if(t < 0) return -1;
+    else if(t > 0) return 1;
+    else return 0;
+}
+
+int main(){
+    int n;cin>>n;
+    int px,py; cin>>px>>py;
+    vector<Point> pilar;
+    for(int i=0;i<n;i++){
+        int x,y;cin>>x>>y;
+        pilar.push_back(Point(x,y));
+    }
+    
+    int no = 0;
+    ll ans = 0;
+    while(1){
+        sort(pilar.begin(),pilar.end());
+        for(int i=1;i<pilar.size();i++){
+            pilar[i].p = pilar[i].x - pilar[0].x;
+            pilar[i].q = pilar[i].y - pilar[0].y;
+        }
+        sort(pilar.begin()+1, pilar.end());
+        vector<int> st;
+        st.push_back(0);
+        st.push_back(1);
+        int cur = 2;
+        while(cur < pilar.size()){
+            while(st.size() >= 2){
+                int f = st.back();
+                st.pop_back();
+                int s = st.back();
+                if(ccw(pilar[s],pilar[f],pilar[cur]) > 0){
+                    st.push_back(f);
+                    break;
+                }
+            }
+            st.push_back(cur++);
+        }
+
+        ll fccw = ccw(Point(px,py), pilar[st[0]], pilar[st[1]]);
+        for(int i=1;i<st.size()-1;i++){
+            ll t = ccw(Point(px,py), pilar[st[i]], pilar[st[i+1]]);
+            if(fccw != t){
+                no = 1;
+                break;
+            }
+        }
+        ll t = ccw(Point(px,py), pilar[st[st.size()-1]], pilar[st[0]]);
+        if(fccw != t){
+            no = 1;
+        }
+        if(no==1) break;
+        ans++;
+        
+        vector<Point> tmp = pilar;
+        set<int> idx;
+        for(auto e: st) idx.insert(e);
+        pilar.clear();
+        for(int i=0;i<tmp.size();i++){
+            if(idx.find(i) == idx.end()) pilar.push_back(tmp[i]);
+        }
+        if(pilar.size() < 3) break;
+    }
+    cout<<ans;
+}

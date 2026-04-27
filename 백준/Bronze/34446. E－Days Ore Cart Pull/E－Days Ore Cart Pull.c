@@ -1,0 +1,1 @@
+n,o,a,p,l;__libc_start_main(){char r[8],w[8];read(0,&r,8);while(!(r[p]&16))p++;while(r[p]&16){a*=10;a+=r[p++]-48;}o=2*a;p=0;n=o;do{n/=10;p++;}while(n);l=p;while(l--){w[l]=o%10+48;o/=10;}write(1,w,p);_exit(0);}main;

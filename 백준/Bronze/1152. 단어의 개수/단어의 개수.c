@@ -1,0 +1,1 @@
+n,p,l,c;__libc_start_main(){char r[1<<16];char w[8];while((l=read(0,&r,1<<16))>0){for(p=0;p<l;p++){if(r[p]>32){n+=(c^1);c=1;}else c=0;}}if(n==0)write(1,"0",1);else{p=8;while(n){w[--p]=n%10+48;n/=10;}write(1,w+p,8-p);}_exit(0);}main;

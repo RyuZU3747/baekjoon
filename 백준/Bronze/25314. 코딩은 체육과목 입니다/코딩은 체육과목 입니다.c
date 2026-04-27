@@ -1,0 +1,1 @@
+main(a){scanf("%d",&a);a/=4;while(a--){printf("long ");}printf("int");}

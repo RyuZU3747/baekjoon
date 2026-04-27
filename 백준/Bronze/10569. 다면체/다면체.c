@@ -1,0 +1,1 @@
+main(n,a,b,i){scanf("%d",&n);while(n--){scanf("%d%d",&a,&b);printf("%d\n",2-a+b);}}
