@@ -1,12 +1,12 @@
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<center><h1>502 Bad Gateway</h1></center>
-</body>
-</html>
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
+#include <iostream>
+using namespace std;
+int main(){
+    int n;cin>>n;
+    int ans = 0;
+    for(int i =0;i<n;i++){
+        int t;cin>>t;
+        ans+=t;
+        if(i!=n-1) ans+=8;
+    }
+    cout<<ans/24<<' '<<ans%24;
+}
