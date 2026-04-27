@@ -1,12 +1,15 @@
-<html>
-<head><title>502 Bad Gateway</title></head>
-<body>
-<center><h1>502 Bad Gateway</h1></center>
-</body>
-</html>
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
-<!-- a padding to disable MSIE and Chrome friendly error page -->
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+
+    long long int k,a,b,c,d;
+
+    cin>>k>>a>>b>>c>>d;
+
+    if(a*k+b==c*k+d) cout<<"Yes "<<a*k+b;
+
+    else cout<<"No";
+
+}
